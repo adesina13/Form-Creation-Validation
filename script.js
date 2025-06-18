@@ -9,21 +9,21 @@ document.addEventListener("DOMContentLoaded", function(){
         const password = document.getElementById('password').value.trim()
 
         let isValid = true;
-        const message = []
+        const messages = []
 
         if (username.length < 3){
             isValid = false
-            message.push("Username must be more than 3 character")
+            messages.push("Username must be more than 3 character")
         }
 
         if (!(email.includes('@')) && !(email.includes('.'))){
             isValid = false
-            message.push("Invalid Email")
+            messages.push("Invalid Email")
         }
 
         if (password.length < 8){
             isValid = false
-            message.push("Use a more secured Password")
+            messages.push("Use a more secured Password")
         }
 
         feedbackDiv.style.display = "block"
@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function(){
             feedbackDiv.textContent = "Registration successful!"
             feedbackDiv.style.color = "#28a745"
         }else{
-            feedbackDiv.innerHTML = `${message.join('<br>')}`
+            feedbackDiv.innerHTML = `${messages.join('<br>')}`
             feedbackDiv.style.color = "#dc3545"
         }
     })
